@@ -1,5 +1,8 @@
 # **Project Name:** Job Tracker with Alerts  
 
+##
+I have been trying to get back into practicing with Django and DRF, I wanted to become a backend dev. I asked ChatGTP to help me think of a beginerfriendly prompt using the following tech. 
+
 ## **Description**  
 Build an application using **Django Rest Framework (DRF)** that scrapes job postings from a job board (e.g., Indeed, LinkedIn, or similar), stores the data in a database, and sends email notifications to users when new jobs match their preferences.  
 
