@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import datetime
 
 
 def career_beacon_job_scraper(page):
@@ -13,11 +14,15 @@ def career_beacon_job_scraper(page):
         link = item.find('a', class_='serp_job_title d-none')['href']
         company = item.find('span', class_='name fw-semibold text-muted').text.strip()
         location = item.find('span', class_='location text-muted').text.strip()
-        date_posted = item.find('div', class_='smaller text-muted')['title']
+        try:
+            date_posted_str = item.find('div', class_='smaller text-muted')['title']
+        except:
+            date_posted_str = datetime.datetime.today().strftime('%Y-%m-%d')
         try:
             job_details = item.find('div', class_='badge badge-primary small px-2 py-1 me-2 mb-2').text.split("/")[0].strip()
         except:
             job_details = ''
+        date_posted = datetime.datetime.strptime(date_posted_str, "%Y-%m-%d").date()
 
         job = {
             'title': title, 
@@ -32,10 +37,9 @@ def career_beacon_job_scraper(page):
     return r.status_code
 ## Need to set up the model and start saving this to the that model
 
-# job_list=[]
+job_list=[]
 # for i in range(3):
 #     career_beacon_job_scraper(i)
 # print(len(job_list))
-
 
 
