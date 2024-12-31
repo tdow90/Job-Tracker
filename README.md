@@ -1,6 +1,6 @@
 # **Project Name:** Job Tracker with Alerts  
 
-##
+## 
 I have been trying to get back into practicing with Django and DRF, I wanted to become a backend dev. I asked ChatGTP to help me think of a beginerfriendly prompt using the following tech. 
 
 ## **Description**  

@@ -1,3 +1,6 @@
 django
 python-decouple
 mysqlclient
+djangorestframework
+beautifulsoup4
+requests
