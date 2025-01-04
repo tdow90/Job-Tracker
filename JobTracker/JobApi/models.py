@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Job(models.Model):
@@ -14,3 +15,12 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+    
+#Need to create a preference model, this should be one-to-one with the user. Each user should have one preference and vice-verse. 
+class Preference(models.Model):
+    User = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    city = models.CharField(max_length=100)
+    job_type = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.user} wants {self.job_type} in {self.city}"
