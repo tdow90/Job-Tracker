@@ -18,7 +18,7 @@ class Job(models.Model):
     
 #Need to create a preference model, this should be one-to-one with the user. Each user should have one preference and vice-verse. 
 class Preference(models.Model):
-    User = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name="user_profile")
     city = models.CharField(max_length=100)
     job_type = models.CharField(max_length=100)
 
