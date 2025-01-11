@@ -5,15 +5,15 @@ from .models import Job
 from django.db import IntegrityError
 
 def get_job_decription(link, headers):
-    detail_url = str(link)
+    detail_url = link
     r = requests.get(detail_url, headers)
     detail_soup = BeautifulSoup(r.content, 'html.parser')
     try:
         description = str(detail_soup.find('section', class_='job_details_container'))
     except:
         description = 'No description included'
+    return description
 
-    print(description)
 
 def career_beacon_job_scraper(page):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15'}
@@ -34,7 +34,7 @@ def career_beacon_job_scraper(page):
         except:
             date_posted_str = datetime.datetime.today().strftime('%Y-%m-%d')
         try:
-            job_details = item.find('div', class_='badge badge-primary small px-2 py-1 me-2 mb-2').text.split("/")[0].strip()
+            job_details = str(item.find('div', class_='badge badge-primary small px-2 py-1 me-2 mb-2'))
         except:
             job_details = ''
         date_posted = datetime.datetime.strptime(date_posted_str, "%Y-%m-%d").date()
@@ -56,10 +56,19 @@ def career_beacon_job_scraper(page):
 
     return 
 
+#Need to add some sleep time when I start scraping all the pages and update the model before merging branch
 
 
 def get_jobs():
-    for i in range(1):
+    for i in range(3):
         career_beacon_job_scraper(i)
     return
 
+def delete_all_jobs():
+    Job.objects.all().delete()
+    return
+
+# url = 'https://www.careerbeacon.com/en/job/2120885/financial-and-consumer-services-commission-fcnb//fredericton-nb'
+# headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15'}
+
+# get_job_decription(url, headers)

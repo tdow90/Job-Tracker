@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .job_scraper import career_beacon_job_scraper, get_jobs
+from .job_scraper import career_beacon_job_scraper, get_jobs, delete_all_jobs
 from django.http import HttpResponse
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
@@ -13,6 +13,10 @@ from datetime import timedelta
 def scrape(request):
     get_jobs()
     return HttpResponse("Scraper complete and jobs added to DB.")
+
+def delete_jobs(request):
+    delete_all_jobs()
+    return HttpResponse("All jobs deleted from DB.")
 
 #List all Jobs in DB
 class JobList(generics.ListAPIView):
