@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import datetime
 from .models import Job
 from django.db import IntegrityError
+from django.utils import timezone
+from datetime import timedelta, date
 
 def get_job_decription(link, headers):
     detail_url = link
@@ -65,10 +67,11 @@ def get_jobs():
     return
 
 def delete_all_jobs():
-    Job.objects.all().delete()
+    three_months_ago = date.today() - timedelta(days=90)
+    jobs = Job.objects.all()
+    for job in jobs:
+        if job.date_posted <= three_months_ago:
+            job.delete()
+            print(f'deleting {job.title} created on {job.date_posted}')
     return
 
-# url = 'https://www.careerbeacon.com/en/job/2120885/financial-and-consumer-services-commission-fcnb//fredericton-nb'
-# headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15'}
-
-# get_job_decription(url, headers)
