@@ -7,6 +7,7 @@ from .serializers import JobSerializer
 from .models import Job
 from django.utils import timezone
 from datetime import timedelta, date
+from rest_framework.response import Response
 
 
 # Create your views here.
@@ -22,6 +23,15 @@ def delete_jobs(request):
 class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = JobSerializer(queryset, many=True)
+        count = queryset.count()
+        return Response({
+            "count": count,
+            "results": serializer.data
+            })
     
 
 #List all new jobs(<= 1week)
