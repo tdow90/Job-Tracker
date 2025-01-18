@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAdminUser
 from .serializers import JobSerializer 
 from .models import Job
 from django.utils import timezone
-from datetime import timedelta
+from datetime import timedelta, date
 
 
 # Create your views here.
@@ -22,13 +22,13 @@ def delete_jobs(request):
 class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+    
 
 #List all new jobs(<= 1week)
 class NewJobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+
 
     def get_queryset(self):
         one_week_ago = timezone.now() - timedelta(days=7)
@@ -38,7 +38,7 @@ class NewJobList(generics.ListAPIView):
 class CityJobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+   
 
     def get_queryset(self):
         city = self.kwargs['city']
@@ -48,7 +48,7 @@ class CityJobList(generics.ListAPIView):
 class NewCityJobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+
 
     def get_queryset(self):
         one_week_ago = timezone.now() - timedelta(days=7)
@@ -59,7 +59,6 @@ class NewCityJobList(generics.ListAPIView):
 class NewJobTypeJobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
 
     def get_queryset(self):
         one_week_ago = timezone.now() - timedelta(days=7)
@@ -70,7 +69,7 @@ class NewJobTypeJobList(generics.ListAPIView):
 class TitleJobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+  
 
     def get_queryset(self):
         job_type = self.kwargs['jobType']
