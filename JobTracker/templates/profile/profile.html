@@ -1,0 +1,10 @@
+<h1>{{user}}'s Profile</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+{% if created %}
+    <p>A new profile was created for you.</p>
+{% endif %}
