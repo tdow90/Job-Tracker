@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
+{% extends "base.html" %}
+
+{% block title %} Create Account {% endblock %}
+
+{% block content %}
 <body>
-    <h1>Create an Account</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+    <div class="container mt-5">
+        <h1>Create an Account</h1>
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Welcome to Job Tracker!</h4>
+            <p>To get started, follow these simple steps:</p>
+            <ol>
+                <li><strong>Create an Account:</strong> Fill out the form below to register your account. This is the first step to get started.</li>
+                <li><strong>Update Your Profile:</strong> Once your account is created, update your profile with your preferred city and job type, and opt in to receive job alerts.</li>
+                <li><strong>Set Up Job Alerts:</strong> With your profile updated, you can start receiving email notifications for job listings based on your preferences.</li>
+                <li><strong>Explore the API:</strong> Once you're set up, you can explore the API documentation to learn how to interact with the Job Tracker system.</li>
+            </ol>
+            <p>We’ll guide you through the next steps once you’re logged in.</p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <p class="mt-3">Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+    </div>
 </body>
-</html>
+{% endblock %}

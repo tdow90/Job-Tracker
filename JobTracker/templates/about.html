@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}About - Job Tracker with Alerts{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="p-4 bg-light rounded shadow-sm">
+        <!-- Header Section -->
+        <div class="text-center mb-4">
+          <h1 class="display-5">About Job Tracker with Alerts</h1>
+          <p class="lead">
+            A smart application that helps you stay on top of job opportunities, tailored to your preferences.
+          </p>
+        </div>
+
+        <!-- Graphic Section -->
+        <div class="text-center mb-4">
+          <div class="display-1 text-primary">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <h3 class="mt-3">Streamlining Your Job Search</h3>
+          <p class="text-muted">One match at a time, tailored to your preferences.</p>
+        </div>
+
+        <!-- Features Section -->
+        <h2 class="h4 mt-4">Core Features</h2>
+        <ul class="list-group mb-4">
+          <li class="list-group-item">
+            <strong>1. Job Scraping:</strong> Automatically fetch job postings from websites like Indeed or LinkedIn.
+          </li>
+          <li class="list-group-item">
+            <strong>2. Database Integration:</strong> Store job postings and user preferences securely in a database.
+          </li>
+          <li class="list-group-item">
+            <strong>3. API Endpoints:</strong> Manage user accounts, preferences, and view saved job listings via a powerful API.
+          </li>
+          <li class="list-group-item">
+            <strong>4. Email Notifications:</strong> Get alerted when jobs matching your criteria are found.
+          </li>
+          <li class="list-group-item">
+            <strong>5. Scheduler:</strong> Automatically update job postings and notify users with task scheduling.
+          </li>
+        </ul>
+
+        <!-- Optional Add-ons -->
+        <h2 class="h5 mt-4">Optional Add-Ons</h2>
+        <ul>
+          <li>Secure user authentication using OAuth2 or JWT.</li>
+          <li>An admin dashboard to monitor and manage jobs, users, and preferences.</li>
+          <li>Advanced filtering and pagination to browse jobs by salary, location, and type.</li>
+          <li>Real-time WebSocket notifications for new job matches.</li>
+          <li>Cloud deployment for easy access anywhere.</li>
+        </ul>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-4">
+          <a href="{% url 'profile_view' %}" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

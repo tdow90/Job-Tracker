@@ -1,10 +1,73 @@
-<h1>{{user}}'s Profile</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+{% extends 'base.html' %}
 
-{% if created %}
-    <p>A new profile was created for you.</p>
-{% endif %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ user }}'s Profile</h1>
+
+    <!-- Instructions Section -->
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Welcome to Your Profile!</h4>
+        <p>Here, you can customize your job preferences to receive the most relevant job listings. We are scraping job postings every day from Career Beacon, a major job board in New Brunswick, Canada. Our goal is to gather all job listings available in the province so that you can find the perfect job for you. Fill out the form below to set your preferences and opt-in for email alerts. By enabling email alerts, you will receive notifications directly to your inbox whenever a job matching your preferences is posted. You can choose the frequency of these notifications (e.g., daily, weekly) to stay up-to-date with the latest job opportunities.</p>
+        <ul>
+            <li><strong>City:</strong> Tell us where you'd like to find jobs in New Brunswick. You can search by city or region.</li>
+            <li><strong>Job Type:</strong> Specify the type of job you're looking for (e.g., Developer, Designer, etc.).</li>
+            <li><strong>Email Alerts:</strong> Opt-in to receive notifications when new jobs match your preferences. You can choose how frequently you'd like to be alerted (e.g., daily, weekly, etc.).</li>
+        </ul>
+        <p>Once you've made your changes, click "Save" to update your preferences.</p>
+    </div>
+
+    <!-- Profile Form Section -->
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- First Name Field -->
+        <div class="mb-3">
+            <label for="id_first_name" class="form-label">First Name</label>
+            {{ form.first_name }}
+        </div>
+
+        <!-- Last Name Field -->
+        <div class="mb-3">
+            <label for="id_last_name" class="form-label">Last Name</label>
+            {{ form.last_name }}
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+            <label for="id_email" class="form-label">Email</label>
+            {{ form.email }}
+        </div>
+
+        <!-- Form Fields for User Preferences -->
+        <div class="mb-3">
+            <label for="id_city" class="form-label">City</label>
+            {{ form.city }}
+            <div class="form-text">Enter the city where you want to search for jobs.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_job_type" class="form-label">Job Type</label>
+            {{ form.job_type }}
+            <div class="form-text">Specify the type of job you're interested in (e.g., Software Engineer, Designer, etc.).</div>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="id_emailed_job_alerts" name="emailed_job_alerts" {% if form.emailed_job_alerts.value %}checked{% endif %}>
+            <label class="form-check-label" for="id_emailed_job_alerts">Opt-in for Email Alerts</label>
+        </div>
+
+        <!-- Save Button -->
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <!-- Confirmation Message -->
+    {% if created %}
+        <div class="mt-3 alert alert-success" role="alert">
+            <p>A new profile was created for you!</p>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}
