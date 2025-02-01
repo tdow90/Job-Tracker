@@ -151,3 +151,5 @@ CELERY_ACCEPT_CONTENT = ['application/json'] # Important for complex tasks
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'  # Or your preferred timezone
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
