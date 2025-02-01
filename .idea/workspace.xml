@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Forgot form and template in last commit. Added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/Profile/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/Profile/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/Profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/Profile/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/templates/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/templates/profile/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobApi/job_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobApi/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobApi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     "Python.job_scraper.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "front-end",
+    "git-widget-placeholder": "add__celery",
     "last_opened_file_path": "/Users/tylerdowning/Desktop/Programming/Job-Tracker",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
@@ -204,8 +203,18 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="6185c62b-cbcb-4d30-97e9-045e83bd96da" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="6185c62b-cbcb-4d30-97e9-045e83bd96da">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>

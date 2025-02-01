@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from .job_scraper import career_beacon_job_scraper, get_jobs, delete_all_jobs
+from .tasks import get_jobs, delete_all_jobs
 from django.http import HttpResponse
 from rest_framework import generics
-from rest_framework.permissions import IsAdminUser
 from .serializers import JobSerializer 
 from .models import Job
 from django.utils import timezone
@@ -10,13 +9,14 @@ from datetime import timedelta, date
 from rest_framework.response import Response
 
 
+
 # Create your views here.
 def scrape(request):
-    get_jobs()
+    get_jobs.delay()
     return HttpResponse("Scraper complete and jobs added to DB.")
 
 def delete_jobs(request):
-    delete_all_jobs()
+    delete_all_jobs.delay()
     return HttpResponse("All jobs deleted from DB.")
 
 #List all Jobs in DB

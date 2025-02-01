@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 import datetime
 from .models import Job
 from django.db import IntegrityError
-from django.utils import timezone
 from datetime import timedelta, date
+from celery import shared_task
+
 
 def get_job_decription(link, headers):
     detail_url = link
@@ -16,7 +17,7 @@ def get_job_decription(link, headers):
         description = 'No description included'
     return description
 
-
+@shared_task
 def career_beacon_job_scraper(page):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15'}
     url = f'https://www.careerbeacon.com/en/search/jobs-in-New-Brunswick?page={page}&jvk=2130348'
@@ -60,18 +61,20 @@ def career_beacon_job_scraper(page):
 
 #Need to add some sleep time when I start scraping all the pages and update the model before merging branch
 
-
+@shared_task(name="get_jobs")
 def get_jobs():
+    print('scrape function called')
     for i in range(3):
         career_beacon_job_scraper(i)
-    return
 
+@shared_task(name="delete_jobs")
 def delete_all_jobs():
-    three_months_ago = date.today() - timedelta(days=90)
+    print("Deleting jobs function called!")
+    three_months_ago = date.today() - timedelta(days=1)
     jobs = Job.objects.all()
     for job in jobs:
         if job.date_posted <= three_months_ago:
             job.delete()
             print(f'deleting {job.title} created on {job.date_posted}')
-    return
+
 

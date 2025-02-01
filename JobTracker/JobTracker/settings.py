@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'JobApi',
     'Profile',
     'rest_framework',
+    'django_celery_beat',
     ]
 
 
@@ -142,3 +143,11 @@ REST_FRAMEWORK = {
 
 LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Or your Redis URL
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0' # Same as broker usually
+CELERY_ACCEPT_CONTENT = ['application/json'] # Important for complex tasks
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'  # Or your preferred timezone
