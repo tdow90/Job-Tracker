@@ -1,18 +1,20 @@
 # **Project Name:** Job Tracker with Alerts  
 
-## 
-I have been trying to get back into practicing with Django and DRF, I wanted to become a backend dev. I asked ChatGTP to help me think of a beginerfriendly prompt using the following tech. 
+## **Introduction**  
+This is my very first **Django project**, and it's also the very first thing I've hosted online! I'm a beginner backend developer, and I’ve been learning Django and Django Rest Framework (DRF) as part of my journey. This project is a result of that learning, with help from ChatGPT in brainstorming a beginner-friendly idea. My goal was to build a simple yet practical app using the technologies below.
+
+I decided to make this project open-source so anyone can contribute to making it better. Feel free to host it locally, submit a PR, or suggest improvements!
 
 ## **Description**  
-Build an application using **Django Rest Framework (DRF)** that scrapes job postings from a job board (e.g., Indeed, LinkedIn, or similar), stores the data in a database, and sends email notifications to users when new jobs match their preferences.  
+This is a web application built with **Django** & **Django Rest Framework (DRF)** that scrapes job postings from a job board (currently scraping **CareerBeacon** for jobs in New Brunswick, Canada), stores the data in a database, and sends email notifications to users when new jobs match their preferences.
 
 ---
 
 ## **Core Features**  
 
 ### 1. **Job Scraping**  
-- Use a web scraping library like **BeautifulSoup** or **Scrapy** to fetch job postings from a chosen website.  
-- Extract job details, such as:  
+- The app uses **BeautifulSoup** to fetch job postings from **CareerBeacon**.  
+- Extracts job details such as:  
   - Title  
   - Company  
   - Location  
@@ -20,48 +22,30 @@ Build an application using **Django Rest Framework (DRF)** that scrapes job post
   - Job description  
 
 ### 2. **Database Integration**  
-- Use **Django’s ORM** with a database like PostgreSQL or SQLite to store:  
-  - Job postings  
-  - User preferences (e.g., keywords, location, job type)  
+- Jobs and user preferences are stored in a database.  
+- User profiles include job title, location, and keywords, which help tailor the job alerts. Allowing users to opt into job alerts via a checkbox.
 
 ### 3. **API Endpoints**  
-- Build DRF endpoints to allow users to:  
-  - Register and manage their accounts.  
-  - Set job preferences (e.g., "Python Developer," "Remote").  
-  - View saved job postings.  
+- Built using DRF, the API allows users to:   
+  - View saved job postings via API.
 
 ### 4. **Mailer Integration**  
-- Set up a mailer using Django’s **EmailBackend** or a library like **smtplib** or **SendGrid**.  
-- Notify users when new jobs matching their preferences are found.  
+- The app uses **Django’s EmailBackend** to send emails to users when new job matches are found.  
+- Users receive weekly alerts for new jobs matching their criteria.  
 
 ### 5. **Scheduler**  
-- Use a task scheduler like **Django Q**, **Celery**, or **APScheduler** to periodically scrape job postings and check for new matches.  
-
----
-
-## **Optional Add-Ons for Extra Practice**  
-
-### 1. **Authentication**  
-- Add user authentication using Django’s built-in auth system or **Simple JWT** for token-based authentication.  
-
-### 2. **Admin Panel**  
-- Leverage Django’s built-in admin panel to view and manage users, jobs, and preferences.  
-
-### 3. **Pagination and Filtering**  
-- Use DRF’s **pagination** and **filtering** capabilities to allow users to browse jobs with filters for salary range, location, and job type.  
-
-### 4. **WebSocket Notifications**  
-- Use **Django Channels** to provide real-time notifications for new job matches.  
-
-### 5. **Cloud Deployment**  
-- Deploy the app on a cloud platform like **AWS**, **Azure**, or **Heroku** for hands-on deployment experience.  
+- A scheduler (using **APScheduler**) periodically scrapes job postings and checks for new matches.  
+- Jobs are fetched on a regular schedule, ensuring users get fresh job alerts.
 
 ---
 
 ## **Tech Stack**  
 
-- **Django Rest Framework (DRF)**: Backend API  
-- **PostgreSQL/SQLite**: Database  
-- **BeautifulSoup/Scrapy**: Web Scraping  
-- **SendGrid/SMTP**: Email Integration  
-- **Django Q/Celery/APScheduler**: Task Scheduling  
+- **Django Rest Framework (DRF)**: For building the backend API  
+- **MySQL Locally**: For database storage  
+- **BeautifulSoup/Scrapy**: For web scraping of job data  
+- **Django Mailer**: For email notifications to users  
+- **Django Q/Celery/APScheduler**: For task scheduling to scrape jobs and send emails  
+
+---
+
