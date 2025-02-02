@@ -9,16 +9,6 @@ from datetime import timedelta, date
 from rest_framework.response import Response
 
 
-
-# Create your views here.
-def scrape(request):
-    get_jobs.delay()
-    return HttpResponse("Scraper complete and jobs added to DB.")
-
-def delete_jobs(request):
-    delete_all_jobs.delay()
-    return HttpResponse("All jobs deleted from DB.")
-
 #List all Jobs in DB
 class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
