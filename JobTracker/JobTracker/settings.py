@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Profile',
     'rest_framework',
     'django_celery_beat',
+    'drf_yasg',
     ]
 
 

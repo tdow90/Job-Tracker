@@ -44,15 +44,38 @@
           </li>
         </ul>
 
-        <!-- Optional Add-ons -->
-        <h2 class="h5 mt-4">Optional Add-Ons</h2>
-        <ul>
-          <li>Secure user authentication using OAuth2 or JWT.</li>
-          <li>An admin dashboard to monitor and manage jobs, users, and preferences.</li>
-          <li>Advanced filtering and pagination to browse jobs by salary, location, and type.</li>
-          <li>Real-time WebSocket notifications for new job matches.</li>
-          <li>Cloud deployment for easy access anywhere.</li>
-        </ul>
+       <h2>How to Use the Job Tracker</h2>
+
+        <p>Welcome to the Job Tracker! Follow the steps below to start receiving tailored job alerts and access job listings through the API.</p>
+
+        <ol>
+          <li><strong>Create an Account:</strong>
+            To get started, you’ll need to create an account on the platform. This will allow you to customize your profile and set up job alerts.
+          </li>
+
+          <li><strong>Set Up Your Profile:</strong>
+            After signing up, head over to your profile page to fill in your preferences. You can add the city where you're looking for jobs, as well as the job title you're interested in. This will help tailor the job alerts to your specific needs.
+          </li>
+
+          <li><strong>Enable Job Alerts:</strong>
+            In your profile settings, there’s an option to enable job alerts. Check the box to start receiving weekly job notifications. These alerts will be sent to the email address associated with your profile.
+          </li>
+
+          <li><strong>How Job Alerts Work:</strong>
+            Once you’ve enabled job alerts, you will receive an email once a week with a list of new job postings that match your profile. These job postings will be:
+            <ul>
+              <li>From <strong>New Brunswick, Canada</strong> (scraped from CareerBeacon)</li>
+              <li>Created in the past week</li>
+              <li>Matching the job title and city specified in your profile</li>
+            </ul>
+          </li>
+
+          <li><strong>Access Job Data via the API:</strong>
+            If you're a developer or prefer working with data programmatically, you can access job listings through our <a href="{% url 'documentation' %}">API documentation</a>. The API allows you to retrieve job listings and integrate them into your own applications or systems. Simply follow the documentation to get started.
+          </li>
+        </ol>
+
+        <p>If you have any questions or need help setting up your profile or job alerts, don't hesitate to reach out to our support team.</p>
 
         <!-- Call to Action -->
         <div class="text-center mt-4">
@@ -62,4 +85,7 @@
     </div>
   </div>
 </div>
+
+
+
 {% endblock %}

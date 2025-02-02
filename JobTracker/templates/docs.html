@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}API Documentation{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Job Tracker API Documentation</h1>
+
+<h2>Welcome to the Job Tracker API</h2>
+
+<p>The Job Tracker API provides access to job listings scraped from CareerBeacon, specifically for <strong>New Brunswick, Canada</strong>. Through our API endpoints, users can retrieve up-to-date job postings, including details such as job titles, company names, locations, descriptions, and application links. This API is designed for developers, job seekers, and businesses who want to programmatically access job data without manually browsing job boards.</p>
+
+<p>Below, you'll find a list of available endpoints, including details on how to authenticate and retrieve job listings.</p>
+
+<h2>Endpoints</h2>
+
+<ul>
+    <li><strong>GET /api/jobs/</strong> - Retrieve all jobs.</li>
+    <li><strong>GET /api/new_jobs/</strong> - Retrieve all new jobs (posted in the last week).</li>
+    <li><strong>GET /api/&lt;city&gt;/</strong> - Retrieve jobs in a specific city.</li>
+    <li><strong>GET /api/new/&lt;city&gt;/</strong> - Retrieve new jobs in a specific city.</li>
+    <li><strong>GET /api/title/&lt;jobType&gt;/</strong> - Retrieve jobs by job type.</li>
+    <li><strong>GET /api/title/&lt;jobType&gt;/&lt;city&gt;/</strong> - Retrieve jobs by job type in a specific city.</li>
+    <li><strong>GET /api/title/new/&lt;jobType&gt;/&lt;city&gt;/</strong> - Retrieve new jobs by job type in a city.</li>
+</ul>
+
+<h2>Models</h2>
+
+<h3>Job Model</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>title</code></td>
+            <td>CharField (max_length=200)</td>
+            <td>The job title.</td>
+        </tr>
+        <tr>
+            <td><code>link</code></td>
+            <td>URLField (max_length=300)</td>
+            <td>URL to the job posting.</td>
+        </tr>
+        <tr>
+            <td><code>company</code></td>
+            <td>CharField (max_length=200)</td>
+            <td>The company offering the job.</td>
+        </tr>
+        <tr>
+            <td><code>location</code></td>
+            <td>CharField (max_length=100)</td>
+            <td>Location of the job.</td>
+        </tr>
+        <tr>
+            <td><code>date_posted</code></td>
+            <td>DateField (nullable)</td>
+            <td>The date the job was posted.</td>
+        </tr>
+        <tr>
+            <td><code>job_details</code></td>
+            <td>TextField (max_length=500)</td>
+            <td>Brief job details.</td>
+        </tr>
+        <tr>
+            <td><code>description</code></td>
+            <td>TextField (max_length=1000)</td>
+            <td>Full job description.</td>
+        </tr>
+        <tr>
+            <td><code>created_date</code></td>
+            <td>DateTimeField (auto_now_add=True)</td>
+            <td>The date the job was added to the database.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Authentication:</strong> The API requires authentication (Basic Auth). Account creation and profile set up will need to be done to access job alerts and view the API data</p>
+
+{% endblock %}

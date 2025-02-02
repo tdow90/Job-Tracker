@@ -13,9 +13,14 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" href="{% url 'profile_view' %}">Profile</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'documentation' %}">API Documentation</a>
+        </li>
+      </ul>
     <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated %}
@@ -44,4 +49,16 @@
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
+
+<footer class="bg-light py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-0">JobTracker with Alerts &copy; 2025</p>
+    <p>
+      <a href="https://github.com/tdow90/Job-Tracker" target="_blank" class="btn btn-link">
+        <i class="bi bi-github"></i> Visit JobTracker GitHub
+      </a>
+    </p>
+  </div>
+</footer>
+
 </html>

@@ -10,6 +10,9 @@ from .models import Profile
 def about(request):
     return render(request, 'about.html')
 
+def documentation(request):
+    return render(request, 'docs.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -21,6 +24,7 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
 @login_required
 def profile_view(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
