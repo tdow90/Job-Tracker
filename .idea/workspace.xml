@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Made some final updates to the html and added some API documentation. Last steps are to add some comments to the code(to make it more readable) and add a real email address for django to send, then test that. Finally, I will be able to host.">
+    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Updated the README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobApi/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobApi/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/Profile/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/Profile/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/Profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/Profile/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/Profile/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/Profile/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobTracker/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,16 +52,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.job_scraper.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tylerdowning/Desktop/Programming/Job-Tracker&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.job_scraper.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Shell Script.build.sh.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/tylerdowning/Desktop/Programming/Job-Tracker",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/JobTracker/templates/profile" />
@@ -146,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738528475756</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated the README.md">
+      <option name="closed" value="true" />
+      <created>1738529343311</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738529343311</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,7 +205,8 @@
     <MESSAGE value="added emails task and set up to send to the console. Need to update to send reqal HTML and then add to real email server." />
     <MESSAGE value="Set up the worker to send emails, added the email to be send in redis using the HTML content." />
     <MESSAGE value="Made some final updates to the html and added some API documentation. Last steps are to add some comments to the code(to make it more readable) and add a real email address for django to send, then test that. Finally, I will be able to host." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some final updates to the html and added some API documentation. Last steps are to add some comments to the code(to make it more readable) and add a real email address for django to send, then test that. Finally, I will be able to host." />
+    <MESSAGE value="Updated the README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

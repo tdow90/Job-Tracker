@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from datetime import timedelta, date
 from celery import shared_task
 
-
+#Helper function to get jobs description
 def get_job_decription(link, headers):
     detail_url = link
     r = requests.get(detail_url, headers)
@@ -17,6 +17,7 @@ def get_job_decription(link, headers):
         description = 'No description included'
     return description
 
+#Function to scrape a specific page in carreer beacon
 @shared_task
 def career_beacon_job_scraper(page):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15'}
@@ -59,12 +60,11 @@ def career_beacon_job_scraper(page):
 
     return 
 
-#Need to add some sleep time when I start scraping all the pages and update the model before merging branch
 
 @shared_task(name="get_jobs")
 def get_jobs():
     print('scrape function called')
-    for i in range(3):
+    for i in range(20):
         career_beacon_job_scraper(i)
 
 @shared_task(name="delete_jobs")
