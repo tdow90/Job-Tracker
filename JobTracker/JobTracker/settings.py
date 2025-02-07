@@ -27,7 +27,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+"job-tracker-t8yd.onrender.com",
+]
 
 
 # Application definition
@@ -93,7 +95,7 @@ DATABASES = {
    #  }
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/JobTracker',
+        default= config('DATABASE_URL'),
         conn_max_age=600
     )
 }
