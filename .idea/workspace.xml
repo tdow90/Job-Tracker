@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="trying to fix static file issues when building on Render">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" afterDir="false" />
+    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Added allowed hosts for render">
+      <change beforePath="$PROJECT_DIR$/JobTracker/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/build.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738893657090</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added allowed hosts for render">
+      <option name="closed" value="true" />
+      <created>1738893978585</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738893978585</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,7 +268,8 @@
     <MESSAGE value="Moved Requirements.txt" />
     <MESSAGE value="Moved build.sh" />
     <MESSAGE value="trying to fix static file issues when building on Render" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix static file issues when building on Render" />
+    <MESSAGE value="Added allowed hosts for render" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added allowed hosts for render" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

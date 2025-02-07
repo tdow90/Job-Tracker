@@ -10,3 +10,4 @@ python manage.py
 
 # Apply any outstanding database migrations
 python manage.py migrate
+python manage.py createsuperuser --noinput || true
