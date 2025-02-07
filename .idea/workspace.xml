@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Moved Requirements.txt">
+    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Moved build.sh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +61,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JobTracker" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/JobTracker/templates/profile" />
-      <recent name="$PROJECT_DIR$/JobTracker" />
       <recent name="$PROJECT_DIR$/JobTracker/JobTracker" />
       <recent name="$PROJECT_DIR$/JobTracker/Templates/Registration" />
     </key>
@@ -179,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738877150751</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Moved build.sh">
+      <option name="closed" value="true" />
+      <created>1738892377099</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738892377099</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,7 +236,8 @@
     <MESSAGE value="Updated the README.md" />
     <MESSAGE value="Updated the project to get ready to host on Render" />
     <MESSAGE value="Moved Requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved Requirements.txt" />
+    <MESSAGE value="Moved build.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved build.sh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
