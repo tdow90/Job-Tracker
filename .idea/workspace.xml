@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Adjusted the redis URL">
+    <list default="true" id="3161be8d-b536-4acd-9a1d-3d957a0e2915" name="Changes" comment="Updated to collect static">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/JobTracker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobTracker/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/JobTracker/build.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738895540941</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated to collect static">
+      <option name="closed" value="true" />
+      <created>1738949278330</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1738949278331</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +303,8 @@
     <MESSAGE value="trying to fix static file issues when building on Render" />
     <MESSAGE value="Added allowed hosts for render" />
     <MESSAGE value="Adjusted the redis URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted the redis URL" />
+    <MESSAGE value="Updated to collect static" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to collect static" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
