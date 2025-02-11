@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 import os
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [
-"job-tracker-t8yd.onrender.com",
+    "job-tracker-t8yd.onrender.com",
+    "127.0.0.1",
 ]
 
 
@@ -159,6 +161,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+REDIS_CONNECTION_KWARGS = {
+    "ssl_cert_reqs": ssl.CERT_NONE  # Disable certificate verification
+}
 
 LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
@@ -167,6 +172,7 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
 CELERY_BROKER_URL = config('REDIS_URL')  # Or your Redis URL
 CELERY_RESULT_BACKEND = config('REDIS_URL') # Same as broker usually
 CELERY_ACCEPT_CONTENT = ['application/json'] # Important for complex tasks
+CELERY_BROKER_TRANSPORT_OPTIONS = REDIS_CONNECTION_KWARGS
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'  # Or your preferred timezone

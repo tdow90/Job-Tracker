@@ -64,7 +64,7 @@ def career_beacon_job_scraper(page):
 @shared_task(name="get_jobs")
 def get_jobs():
     print('scrape function called')
-    for i in range(20):
+    for i in range(35):
         career_beacon_job_scraper(i)
 
 @shared_task(name="delete_jobs")

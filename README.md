@@ -49,3 +49,12 @@ This is a web application built with **Django** & **Django Rest Framework (DRF)*
 
 ---
 
+## **Important Note**  
+Site is hosted at: https://job-tracker-t8yd.onrender.com
+I decided to host this project on Render's free tier. But the free tier doesn't include background workers. So for now, 
+i wont be automatically scraping jobs or deleting them. Plus I won't be able to send emails, the code works locally, 
+but I can't set up background workers for free now. I may transition in the future to another hosting service. 
+
+Jobs will be static for now. They wont be updated. 
+
+
